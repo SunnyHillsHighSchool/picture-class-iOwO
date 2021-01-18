@@ -366,7 +366,24 @@ public class Picture
     }
   }
 
-   ////////////////////// methods ///////////////////////////////////////
+   ////////////////////// methods
+   //precondition: amount is between 0 and 1
+   public void decreaseRGB (double rAmt, double gAmt, double bAmt)
+   {
+     //create pixel array
+     Pixel [] pixelArray = this.getPixels();
+     //loop through all pixels
+     for(Pixel p : pixelArray)
+     {
+      // decrease RGB values
+       p.setRed((int)(p.getRed()*rAmt));
+       p.setGreen((int)(p.getGreen()*gAmt));
+       p.setBlue((int)(p.getBlue()*bAmt));
+     }
+   }
+   //Note: This code can also be used to increase RGB as well. 
+   
+   ///////////////////////////////////////
 /*
 The copper-puzzle.png image is a puzzle -- it shows something famous, however the image has been distored. The true image is in the blue and green values, however all the blue and green values have all be divided by 20, so the values are very small. The red values are all just random numbers, noise added on top to obscure things. Undo these distortions to reveal the true image.
 
