@@ -3,8 +3,10 @@ class Main
   /* Main method for testing */
   public static void main(String[] args) 
   {
-    Picture pic = new Picture("arch.jpg");
-     
+    Picture pic = new Picture("beach.jpg");
+    //Must use value between 0 and 1 as precondition
+    pic.decreaseRGB(0.99, .1, .1); 
+    
     pic.write("output.jpg");
   }
 }

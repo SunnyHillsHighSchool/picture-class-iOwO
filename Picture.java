@@ -368,19 +368,20 @@ public class Picture
 
    ////////////////////// methods
    //precondition: amount is between 0 and 1
-   public void decreaseBlue(double amount){
+   public void decreaseRGB (double rAmt, double gAmt, double bAmt)
+   {
      //create pixel array
      Pixel [] pixelArray = this.getPixels();
-     //create pixel object
-     Pixel p = null;
      //loop through all pixels
-     for(int x = 0; x < pixelArray.length; x++){
-       p = pixelArray[x];
-      // decrease blue value
-       p.setBlue((int)(p.getBlue()*amount);
+     for(Pixel p : pixelArray)
+     {
+      // decrease RGB values
+       p.setRed((int)(p.getRed()*rAmt));
+       p.setGreen((int)(p.getGreen()*gAmt));
+       p.setBlue((int)(p.getBlue()*bAmt));
      }
    }
-   
+   //Note: This code can also be used to increase RGB as well. 
    
    ///////////////////////////////////////
 /*
